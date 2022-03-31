@@ -9,7 +9,7 @@ pipeline {
         
         stage("checkout") {
           steps{
-           checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sravz8184/sample-java-']]]) 
+           checkout([$class: 'GitSCM', branches: [[name: '*/Test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sravz8184/DevopsBasics.git']]]) 
             }
           }
         
@@ -33,7 +33,7 @@ pipeline {
                 }
             }
         }
-        stage("Build Docker Image") {
+   /*     stage("Build Docker Image") {
             steps{
              script{
                   
@@ -53,7 +53,7 @@ pipeline {
                
                
             }
-        }
+        } */
         
         
         

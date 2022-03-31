@@ -15,12 +15,12 @@ pipeline {
         
         stage("build") {
           steps{
-            ssh 'mvn clean install -f pom.xml'
+            ssh 'mvn clean install'
           }  
         }
         stage("test") {
             steps{
-             ssh 'mvn test -f pom.xml'   
+             ssh 'mvn test'   
             }
         }
         stage("package") {

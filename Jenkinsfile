@@ -16,8 +16,14 @@ pipeline {
         stage("build") {
           steps{
             sh 'clean install package'
-          }  
+          } 
+               post{
+                success{
+                    archiveArtifacts 'target/*.war'
+                }
+            }
         }
+        
        /* stage("test") {
             steps{
              sh 'mvn test'   
@@ -26,7 +32,7 @@ pipeline {
         stage("package") {
             steps{
              sh 'mvn package'        
-            }*/
+            }
             post{
                 success{
                     archiveArtifacts 'target/*.war'

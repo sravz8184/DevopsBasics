@@ -17,11 +17,11 @@ pipeline {
           steps{
             sh 'mvn clean install package'
           } 
-               post{
+           /* post{
                 success{
                     archiveArtifacts 'target/*.war'
                 }
-            }
+            } */
         }
         
        /* stage("test") {

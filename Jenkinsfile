@@ -15,10 +15,10 @@ pipeline {
         
         stage("build") {
           steps{
-            sh 'mvn clean install'
+            sh 'clean install package'
           }  
         }
-        stage("test") {
+       /* stage("test") {
             steps{
              sh 'mvn test'   
             }
@@ -26,7 +26,7 @@ pipeline {
         stage("package") {
             steps{
              sh 'mvn package'        
-            }
+            }*/
             post{
                 success{
                     archiveArtifacts 'target/*.war'

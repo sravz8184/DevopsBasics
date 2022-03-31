@@ -15,17 +15,17 @@ pipeline {
         
         stage("build") {
           steps{
-            bat 'mvn clean install -f pom.xml'
+            ssh 'mvn clean install -f pom.xml'
           }  
         }
         stage("test") {
             steps{
-             bat 'mvn test -f pom.xml'   
+             ssh 'mvn test -f pom.xml'   
             }
         }
         stage("package") {
             steps{
-             bat 'mvn package'        
+             ssh 'mvn package'        
             }
             post{
                 success{

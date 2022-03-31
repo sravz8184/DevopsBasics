@@ -15,17 +15,17 @@ pipeline {
         
         stage("build") {
           steps{
-            ssh 'mvn clean install'
+            sh 'mvn clean install'
           }  
         }
         stage("test") {
             steps{
-             ssh 'mvn test'   
+             sh 'mvn test'   
             }
         }
         stage("package") {
             steps{
-             ssh 'mvn package'        
+             sh 'mvn package'        
             }
             post{
                 success{
